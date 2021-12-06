@@ -1,0 +1,4 @@
+#Thu Dec 02 10:47:44 IST 2021
+base.0=/Users/anisha/Downloads/FlutterFiles/flutter_news/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
