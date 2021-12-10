@@ -36,7 +36,11 @@ class _UsersPageState extends State<UsersPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Flutter Users"),
+          backgroundColor: Colors.white,
+          title: Text(
+            "Flutter Users",
+            style: TextStyle(color: Colors.pink),
+          ),
           centerTitle: true,
         ),
         body: isLoading
@@ -52,7 +56,7 @@ class _UsersPageState extends State<UsersPage> {
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(20),
                             topRight: Radius.circular(20)),
-                        color: Colors.amber[100]),
+                        color: Colors.pinkAccent[100]),
                     child: Row(
                       children: [
                         Padding(

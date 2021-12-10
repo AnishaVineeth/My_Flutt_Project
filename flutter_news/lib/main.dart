@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.amber,
+        primarySwatch: Colors.pink,
       ),
       home: Scaffold(
         body: tabs[_currentIndex],
@@ -45,15 +45,15 @@ class _MyAppState extends State<MyApp> {
             BottomNavigationBarItem(
                 icon: Icon(Icons.home),
                 label: 'Home',
-                backgroundColor: Colors.amber),
+                backgroundColor: Colors.pinkAccent),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle),
                 label: 'Users',
-                backgroundColor: Colors.amber),
+                backgroundColor: Colors.pinkAccent),
             BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined),
                 label: 'Updated Users',
-                backgroundColor: Colors.amber)
+                backgroundColor: Colors.pinkAccent)
           ],
         ),
       ),

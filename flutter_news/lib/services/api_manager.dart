@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter_news/constants/strings.dart';
 import 'package:flutter_news/models/news_model.dart';
+import 'package:flutter_news/models/updated_users.dart';
 import 'package:flutter_news/models/users.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,19 +28,20 @@ class APIManager {
     return newsModel;
   }
 
-  static Future<List<User>> getUsers() async {
+  static Future<UpdatedUsers> getUsers() async {
     // List<Users> users = [];
+    var users;
     try {
       final response = await http.get(Uri.parse(Strings.url_updated_user));
       if (response.statusCode == 200) {
-        var jsonStringg = response.body;
-        List<User> users = usersFromJson(jsonStringg) as List<User>;
+        // var jsonStringg = response.body;
+        users = usersFromJson(response.body);
         return users;
         print(users);
       }
     } catch (e) {
       throw Exception('Failed to load');
     }
-    return <User>[];
+    return users;
   }
 }

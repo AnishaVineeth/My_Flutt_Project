@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_news/models/news_model.dart';
+import 'package:flutter_news/models/updated_users.dart';
 import 'package:flutter_news/models/users.dart';
 import 'package:flutter_news/services/api_manager.dart';
 
@@ -11,7 +12,7 @@ class UpdatedUsersPage extends StatefulWidget {
 }
 
 class _UpdatedUsersPageState extends State<UpdatedUsersPage> {
-  List<User> _users = [];
+  late Future<UpdatedUsers> _users;
   bool isLoading = false;
 
   @override
@@ -19,27 +20,13 @@ class _UpdatedUsersPageState extends State<UpdatedUsersPage> {
     super.initState();
     isLoading = true;
     APIManager.getUsers().then((users) {
-      _users = users;
+      _users = users as Future<UpdatedUsers>;
       isLoading = false;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        child: GridView.builder(
-            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2, crossAxisSpacing: 4.0, mainAxisSpacing: 4.0),
-            // itemCount: snapshot.data.articles.length,
-            itemCount: _users.length,
-            itemBuilder: (BuildContext context, int index) {
-              User user = _users[index];
-              print(user);
-              print(user.name!);
-              return GridTile(
-                child: Text(user.name!),
-                //Image.network('src')
-              );
-            }));
+    return Container();
   }
 }
