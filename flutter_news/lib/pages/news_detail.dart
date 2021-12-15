@@ -3,10 +3,12 @@ import 'package:flutter_news/models/news_model.dart';
 import 'package:flutter_news/services/api_manager.dart';
 
 class NewsDetail extends StatefulWidget {
-  final NewsModel? newsmodel;
-  // final Future<NewsModel?> newsModel;
+  //final NewsModel? newsmodel;
 
-  const NewsDetail({Key? key, required this.newsmodel}) : super(key: key);
+  const NewsDetail({
+    Key? key,
+    //required this.newsmodel
+  }) : super(key: key);
 
   @override
   State<NewsDetail> createState() => _NewsDetailState();

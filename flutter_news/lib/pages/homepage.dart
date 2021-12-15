@@ -82,14 +82,12 @@ class _HomePageState extends State<HomePage> {
                                 )
                               ],
                             ),
-                            onTap: () => print("hellooo $article[index] ")
-                            // Navigator.push(
-                            //     context,
-                            //     MaterialPageRoute(
-                            //         builder: (context) => NewsDetail(
-                            //               newsmodel: article[index],
-                            //             )))
-                            ));
+                            onTap: () =>
+                                // print("hellooo $article[index] ")
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => NewsDetail()))));
                   });
             } else {
               return Center(child: CircularProgressIndicator());

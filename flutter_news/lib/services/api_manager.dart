@@ -34,10 +34,12 @@ class APIManager {
     try {
       final response = await http.get(Uri.parse(Strings.url_updated_user));
       if (response.statusCode == 200) {
-        // var jsonStringg = response.body;
-        users = usersFromJson(response.body);
+        var jsonStringg = response.body;
+        var jsonMapp = json.decode(jsonStringg);
+        users = usersFromJson(jsonMapp);
         return users;
         print(users);
+        print(jsonMapp['status']);
       }
     } catch (e) {
       throw Exception('Failed to load');
