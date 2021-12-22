@@ -26,7 +26,7 @@ class _NewsDetailState extends State<NewsDetail> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(' Details')),
+        appBar: AppBar(title: Text(' News Detail')),
         body: FutureBuilder<NewsModel?>(
             future: newsModel,
             builder: (context, snapshot) {
@@ -35,14 +35,27 @@ class _NewsDetailState extends State<NewsDetail> {
                     itemCount: snapshot.data!.articles!.length,
                     itemBuilder: (context, index) {
                       var article = snapshot.data!.articles![index];
-                      return Container(
-                        child: Column(
-                          children: [
-                            Text(article.title!),
-                            Card(
-                              child: Text(article.content!),
-                            )
-                          ],
+                      return Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Text(
+                                article.title!,
+                                style: TextStyle(color: Colors.pinkAccent),
+                              ),
+                              Container(
+                                height: 80,
+                                child: Card(
+                                  child: Text(
+                                    article.content!,
+                                    maxLines: 3,
+                                    overflow: TextOverflow.ellipsis,
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       );
                     });

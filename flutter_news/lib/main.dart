@@ -1,7 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter_news/pages/homepage.dart';
-import 'package:flutter_news/pages/updated_users_page.dart';
 import 'package:flutter_news/pages/users_page.dart';
 import 'package:http/http.dart' as http;
 
@@ -19,7 +18,7 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   int _currentIndex = 0;
 
-  final tabs = [HomePage(), UsersPage(), UpdatedUsersPage()];
+  final tabs = [HomePage(), UsersPage()];
 
   @override
   void initState() {
@@ -50,10 +49,6 @@ class _MyAppState extends State<MyApp> {
                 icon: Icon(Icons.account_circle),
                 label: 'Users',
                 backgroundColor: Colors.pinkAccent),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.account_circle_outlined),
-                label: 'Updated Users',
-                backgroundColor: Colors.pinkAccent)
           ],
         ),
       ),
